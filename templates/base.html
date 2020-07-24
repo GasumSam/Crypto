@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename= '/css/bulma.css') }}"> 
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>       
+        <title>Ángel Crypto | {% block titulo %}{% endblock %}</title>
+    </head>
+<body>
+    <header><div class="has-background-white">
+                <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">One</a></li>
+                        <li><a href="#">Two</a></li>
+                        <li><a href="#">Three</a></li>
+                    </ul>
+                </nav>
+    </div></header>
+    <section class="hero is-warning is-large">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                    <figure>
+                        <img src="http://lacurvadekentucky.com/images/lion_logo.png" alt="Ángel Crypto">
+                    </figure>
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                  <span>fg</span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroB" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    ...
+                  </a>
+                  <!--
+                  <span class="navbar-item">
+                    <a class="button is-info is-inverted">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Download</span>
+                    </a>
+                  </span>-->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      
+        <div class="hero-body">
+          <div class="container has-text-centered">
+
+            {% block contenido %}{% endblock %} 
+            <!--
+            <p class="title">
+              Title
+            </p>
+            <p class="subtitle">
+              Subtitle
+            </p>
+            -->
+          </div>
+        </div>
+      
+        <div class="hero-foot">
+          <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+              <ul>
+                <li class="is-active">
+                  <a>Overview</a>
+                </li>
+                <li>
+                  <a>Modifiers</a>
+                </li>
+                <li>
+                  <a>Grid</a>
+                </li>
+                <li>
+                  <a>Elements</a>
+                </li>
+                <li>
+                  <a>Components</a>
+                </li>
+                <li>
+                  <a>Layout</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+   
+</body>
+</html>
