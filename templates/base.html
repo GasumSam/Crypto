@@ -11,7 +11,7 @@
     <header><div class="has-background-white">
                 <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="{{ url_for('index')}}">Home</a></li>  <!--  -->
                         <li><a href="#">One</a></li>
                         <li><a href="#">Two</a></li>
                         <li><a href="#">Three</a></li>
@@ -28,11 +28,13 @@
                         <img src="http://lacurvadekentucky.com/images/lion_logo.png" alt="Ángel Crypto">
                     </figure>
                 </a>
+                <!--
                 <span class="navbar-burger burger" data-target="navbarMenuHeroB">
                   <span>fg</span>
                   <span></span>
                   <span></span>
                 </span>
+            -->
               </div>
               <div id="navbarMenuHeroB" class="navbar-menu">
                 <div class="navbar-end">
@@ -59,8 +61,7 @@
       
         <div class="hero-body">
           <div class="container has-text-centered">
-
-            {% block contenido %}{% endblock %} 
+            {% block content %}{% endblock %} 
             <!--
             <p class="title">
               Title
@@ -99,6 +100,11 @@
           </nav>
         </div>
       </section>
-   
+   <footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            &copy; 2020 <strong>Ángel Crypto</strong> Tamin Currency Trade Lc. | Benquerencia de la Serena. CP 06429. Badajoz. SPAIN</p>
+    </div>
+   </footer>
 </body>
 </html>
