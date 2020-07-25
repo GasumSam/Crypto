@@ -26,37 +26,19 @@
             <th>Observaciones</th>
           </tr>
     </tfoot>
+    {% for each in moves %}
     <tbody>
       <tr>
-        <th>00/00/00</th>
-        <td>00:00</td>
-        <td>EUR</td>
-        <td>XXX.XX</td>
-        <td>ADA</td>
-        <td>XXXXX.XX</td>
-        <td>$$$$.$$</td>
+        <th>{{ each[1] }}</th>
+        <td>{{ each[1] }}</td>
+        <td>{{ each[2] }}</td>
+        <td>{{ each[3] }}</td>
+        <td>{{ each[4] }}</td>
+        <td>{{ each[5] }}</td>
+        <td>{{ each[6] }}</td>
         <td>???????</td>
       </tr>
-      <tr>
-        <th>00/00/00</th>
-        <td>00:00</td>
-        <td>EUR</td>
-        <td>XXX.XX</td>
-        <td>ADA</td>
-        <td>XXXXX.XX</td>
-        <td>$$$$.$$</td>
-        <td>???????</td>
-      </tr>
-      <tr>
-        <th>00/00/00</th>
-        <td>00:00</td>
-        <td>EUR</td>
-        <td>XXX.XX</td>
-        <td>ADA</td>
-        <td>XXXXX.XX</td>
-        <td>$$$$.$$</td>
-        <td>???????</td>
-      </tr>
+      {% endfor %}
 
     </tbody>
   </table>
