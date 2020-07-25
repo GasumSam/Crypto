@@ -34,7 +34,7 @@ export FLASK_APP=index
 export FLASK_ENV=development
 ```
 
-6. Ejecutar index.py en Virtual Environment
+6. Ejecutar run en Virtual Environment
 
 ```
 flask run
