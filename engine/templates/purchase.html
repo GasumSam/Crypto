@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% set active_page = 'compra' %}
+{% block titulo %} Compras {% endblock %}
+{% block content %}
+<div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          
+          <article class="tile is-child notification is-warning">
+              <p class="title">Purchase Form</p>
+            <p class="subtitle">Easy operation, easy tame</p>
+            <div class="level-item">
+                
+                <div class="select is-rounded">
+                    <select action="/purchase" method="post">
+                    <option>Initial currency</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Quantity">
+                    </div>
+                </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-info">
+            <div class="level-item">
+                <div class="select is-rounded">
+                    <select>
+                    <option>New Currency</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    <option>With options</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Price by unit">
+                    </div>
+                </div>
+            </div>
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+            <p class="title">Invest</p>
+        <p class="subtitle">Total price operation in inicial currency</p>
+            <div class="field">
+                <div class="button_align">
+                    <div class="control">
+                        <input class="input is-centered" type="text" placeholder="Total price">
+                    </div>
+                    <div class="buttons is-inthemiddle">
+                        <button class="button">Submit</button>
+                        <button class="button is-warning">Confirm</button>
+                    </div>
+                </div>
+            </div>
+                <div class="content">
+            <!-- Content -->
+                </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+
+{% endblock %}

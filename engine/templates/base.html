@@ -8,16 +8,20 @@
         <title>Ángel Crypto | {% block titulo %}{% endblock %}</title>
     </head>
 <body>
-    <header><div class="has-background-white">
+    <header>
+      <!--
+      <div class="has-background-white">
                 <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
                     <ul>
-                        <li><a href="{{ url_for('moves')}}">Home</a></li>  <!--  -->
-                        <li><a href="#">One</a></li>
+                        <li><a href="{{ url_for('moves')}}">Home</a></li>
+                        <li><a href="{{ url_for('compra')}}">Compra</a></li>
                         <li><a href="#">Two</a></li>
                         <li><a href="#">Three</a></li>
                     </ul>
                 </nav>
-    </div></header>
+    </div>
+          -->
+  </header>
     <section class="hero is-warning is-large">
         <div class="hero-head">
           <nav class="navbar">
@@ -38,11 +42,14 @@
               </div>
               <div id="navbarMenuHeroB" class="navbar-menu">
                 <div class="navbar-end">
-                  <a class="navbar-item is-active">
+                  <a class="navbar-item {% if 'moves' == active_page %}is-active{% endif%}" href="{{ url_for('moves')}}">
                     Home
                   </a>
-                  <a class="navbar-item">
-                    ...
+                  <a class="navbar-item {% if 'compra' == active_page %}is-active{% endif%}" href="{{ url_for('compra')}}">
+                    Purchase
+                  </a>
+                  <a class="navbar-item {% if '#' == active_page %}is-active{% endif%}" href="{{ url_for('moves')}}">
+                    Status
                   </a>
                   <!--
                   <span class="navbar-item">
@@ -55,6 +62,7 @@
                   </span>-->
                 </div>
               </div>
+              
             </div>
           </nav>
         </div>
@@ -77,23 +85,14 @@
           <nav class="tabs is-boxed is-fullwidth">
             <div class="container">
               <ul>
-                <li class="is-active">
-                  <a>Overview</a>
+                <li class="{% if 'moves' == active_page %}is-active{% endif%}">
+                  <a href="{{ url_for('moves')}}"> Home </a>
                 </li>
-                <li>
-                  <a>Modifiers</a>
+                <li class="{% if 'compra' == active_page %}is-active{% endif%}">
+                  <a href="{{ url_for('compra')}}"> Purchase </a>
                 </li>
-                <li>
-                  <a>Grid</a>
-                </li>
-                <li>
-                  <a>Elements</a>
-                </li>
-                <li>
-                  <a>Components</a>
-                </li>
-                <li>
-                  <a>Layout</a>
+                <li class="{% if '#' == active_page %}is-active{% endif%}">
+                  <a href="{{ url_for('moves')}}"> Status </a>
                 </li>
               </ul>
             </div>

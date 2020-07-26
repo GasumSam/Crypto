@@ -1,6 +1,7 @@
 import sqlite3
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 from engine import app
+from engine.forms import FormConsulta
 
 def connection():
     conn = sqlite3.connect(app.config['DATA_BASE'])
@@ -19,3 +20,30 @@ def moves():
     conn.close()
 
     return render_template('index.html', moves=moves)
+
+
+@app.route('/purchase', methods=['GET', 'POST'])
+def compra():
+
+    form = FormConsulta(request.form)
+    
+    if request.method == 'GET':
+        return render_template('purchase.html', form=form) #error_gral=False)
+    else:
+        if form.validate():
+            conn = connection()
+            cur = conn.cursor()
+            query = "INSERT INTO movimientos (from_currency, to_currency, precio_unidad) values (?, ?, ?);"
+            datos = (request.values.get('from_currency'), request.values.get('to_currency'), request.values.get('precio_unidad'))
+            try:
+                cur.execute(query, datos)
+                conn.commit()
+            except Exception as e:
+                print("INSERT - Error en el acceso a la base de datos: {}".format(e))
+                conn.close()
+                return render_template('purchase.html', form=form, error_gral='Error en acceso a base de datos: {}'.format(e))
+            conn.close()
+            return redirect(url_for("/purchase"))
+        else:
+            return render_template('purchase.html', form=form, error_gral=False)
+
