@@ -3,7 +3,13 @@ from wtforms import StringField, FloatField, SubmitField, HiddenField, SelectFie
 from wtforms.validators import DataRequired, Length, ValidationError
 
 
+class MyForm(FlaskForm):
+    id = HiddenField('id')
+    name = StringField('name', validators=[DataRequired(), Length(min=3, message="Three characters at least")]) 
+    options = SelectMultipleField('options', choices=[('EUR'), ('USD'), ('BTC')])
 
+
+'''
 class FormConsulta(FlaskForm):
     id = HiddenField('id')
     from_currency = SelectMultipleField(choices=[('EUR'), ('USD'), ('BTC')]) #)('Inicial Currency', [validators.required()])) #=[DataRequired(), Length(min=3, message="Three characters at least")])
@@ -12,7 +18,7 @@ class FormConsulta(FlaskForm):
 
     submit = SubmitField('Aceptar')
 
-
+'''
 '''
     https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount=1&symbol=<From>&convert=<To>CMC_PRO_API_KEY=<vuestra_api_key>
 
@@ -23,4 +29,7 @@ class FormConsulta(FlaskForm):
                         <Precio total>
 
                         Boton Boton
+
+
+                        <fuengirola valley>
 '''

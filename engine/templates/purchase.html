@@ -11,7 +11,6 @@
               <p class="title">Purchase Form</p>
             <p class="subtitle">Easy operation, easy tame</p>
             <div class="level-item">
-                
                 <div class="select is-rounded">
                     <select action="/purchase" method="post">
                     <option>Initial currency</option>
@@ -25,7 +24,10 @@
                 </div>
                 <div class="field">
                     <div class="control">
-                      <input class="input" type="text" placeholder="Quantity">
+                        <form method="post" type="text" placeholder="Quantity">
+                        {{ form.name (class="input") }}
+                        </form>
+                     <!-- class="input" type="text" placeholder="Quantity" method="POST" action="/"> -->
                     </div>
                 </div>
             </div>
@@ -54,6 +56,9 @@
             </div>
           <div class="content">
             <!-- Content -->
+            <form method="POST" action="/">
+            <input type="submit" value="Go">
+            </form>
           </div>
         </article>
       </div>

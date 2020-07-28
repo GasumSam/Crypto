@@ -1,7 +1,7 @@
 import sqlite3
 from flask import Flask, render_template, url_for, request, redirect
 from engine import app
-from engine.forms import FormConsulta
+from engine.forms import MyForm
 
 def connection():
     conn = sqlite3.connect(app.config['DATA_BASE'])
@@ -24,8 +24,15 @@ def moves():
 
 @app.route('/purchase', methods=['GET', 'POST'])
 def compra():
+    form = MyForm()
+    if form.validate_on_submit():
+        return redirect('/')
+    return render_template('purchase.html', form=form)
 
-    form = FormConsulta(request.form)
+
+
+'''   
+    #form = FormConsulta(request.form)
     
     if request.method == 'GET':
         return render_template('purchase.html', form=form) #error_gral=False)
@@ -47,3 +54,4 @@ def compra():
         else:
             return render_template('purchase.html', form=form, error_gral=False)
 
+'''
