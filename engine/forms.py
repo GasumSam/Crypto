@@ -5,11 +5,18 @@ from wtforms.validators import DataRequired, Length, ValidationError
 
 class MyForm(FlaskForm):
     id = HiddenField('id')
-    name = StringField('name', validators=[DataRequired(), Length(min=3, message="Three characters at least")]) 
-    options = SelectMultipleField('options', choices=[('EUR'), ('USD'), ('BTC')])
+    name = StringField('name', validators=[DataRequired(), Length(min=3, message="Three characters at least")], render_kw={"placeholder": "Quantity"}) 
+    drop = SelectField('drop', choices=[('Initial currency'), ('EUR'), ('USD'), ('ETH'), ('BTC')], render_kw={"placeholder": "Initial currency"})
+    #options = SelectMultipleField('options', choices=[('EUR'), ('USD'), ('BTC')])
 
 
 '''
+
+language = SelectField(u'Programming Language', choices=[('cpp', 'C++'), ('py', 'Python'), ('text', 'Plain Text')])
+
+('abc', [InputRequired()], render_kw={"placeholder": "test"})
+
+
 class FormConsulta(FlaskForm):
     id = HiddenField('id')
     from_currency = SelectMultipleField(choices=[('EUR'), ('USD'), ('BTC')]) #)('Inicial Currency', [validators.required()])) #=[DataRequired(), Length(min=3, message="Three characters at least")])

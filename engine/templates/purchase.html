@@ -12,7 +12,7 @@
             <p class="subtitle">Easy operation, easy tame</p>
             <div class="level-item">
                 <div class="select is-rounded">
-                    <select action="/purchase" method="post">
+                    <!--<select action="/purchase" method="post">
                     <option>Initial currency</option>
                     <option>With options</option>
                     <option>With options</option>
@@ -20,11 +20,14 @@
                     <option>With options</option>
                     <option>With options</option>
                     <option>With options</option>
-                    </select>
+                    </select>  -->
+                    <form method="get" type="text">
+                        {{ form.drop (class="select is-rounded") }}
+                    </form>
                 </div>
                 <div class="field">
                     <div class="control">
-                        <form method="post" type="text" placeholder="Quantity">
+                        <form method="post" type="text">
                         {{ form.name (class="input") }}
                         </form>
                      <!-- class="input" type="text" placeholder="Quantity" method="POST" action="/"> -->
